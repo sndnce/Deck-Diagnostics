@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deck Diagnostics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+  
+      <!-- LEFT: Hamburger -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="offcanvas" aria-label="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+  
+      <!-- CENTER: Logo + Title -->
+      <div class="header-content">
+        <img src="public/DeckDiagFavicon (1).png" alt="HDC Logo" class="hdc-logo" />
+        <div class="header-text">
+          <h1>DECK DIAGNOSTICS</h1>
+          <a href="https://www.hdc-fixit.com" target="_blank">
+            <p>by Home DevCo Inc.</p>
+          </a>
+        </div>
+      </div>
+  
+      <!-- RIGHT: HDC Home -->
+      <a href="https://www.hdc-fixit.com/home" target="_blank" class="hdc-home-link">
+        <img src="public/hdc-icon.png" alt="HDC Home" class="hdc-home-icon">
+        <span>Return to HDC Official Site</span>
+      </a>
+  
+    </div>
+  </header>
+  
+  <aside id="offcanvas" class="offcanvas" aria-hidden="true">
+    <header class="offcanvas-head">
+      <strong>MENU</strong>
+      <button class="nav-close" aria-label="Close menu">✕</button>
+    </header>
+    <nav class="offcanvas-nav" aria-label="Site">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/services.html" class="nav-link">SB-721</a>
+      <a href="/about.html" class="nav-link">FAQ</a>
+      <a href="/contact.html" class="nav-link">CONTACT</a>
+    </nav>
+  </aside>
+  <div class="backdrop"></div>
+
+  <!-- PAGE CONTENT GOES HERE -->
+  <main>
+    <section class="hero">
+      <!-- Hero section later -->
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-triangle"></div>
+    <div class="footer-content">
+    <!-- HORIZONTAL MENU FOOTER -->
+      <nav class="footer-menu" aria-label="Footer">
+        <a href="/about.html">ABOUT</a>
+        <a href="/sb-721.html">SB-721</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/contact.html">CONTACT</a>
+      </nav>
+
+      <p>&copy; 2024 Deck Diagnostics – All rights reserved.<br>Licensed since 1989 LIC #700854</p>
+      <div class="socials">
+        <a href="#"><img src="public/insta.png" alt="Instagram" class="max-width: 100px;"></a>
+        <a href="#"><img src="public/linkedin.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
