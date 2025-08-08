@@ -1,0 +1,129 @@
+<!-- FONT IMPORT -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- OUTER FULLSCREEN CONTAINER -->
+<div style="margin: 0; padding: 0; overflow-x: hidden;">
+
+  <!-- TOP BAR -->
+  <div style="background: white; padding: 20px 0 10px; text-align: center;">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <img src="https://i.imgur.com/wAgu9gy.png" alt="Logo 1" style="height: 80px;">
+      <img src="https://i.imgur.com/zumyDqW.png" alt="Deck Diagnostics Logo" style="height: 80px;">
+    </div>
+  </div>
+
+  <!-- TRIANGLE -->
+  <div style="
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 16px solid red;
+    margin: 0 auto;
+    z-index: 3;
+  "></div>
+
+  <!-- HERO SECTION -->
+  <div style="position: relative; width: 100vw; height: 100vh; overflow: hidden; font-family: 'Montserrat', sans-serif;">
+
+    <!-- CAROUSEL BACKGROUND -->
+    <div id="carousel" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1;">
+      <img src="https://i.imgur.com/vaKeHHr.jpeg" class="fade-slide active" style="width:100%; height:100%; object-fit:cover; position:absolute;">
+      <img src="https://i.imgur.com/VuK52wb.jpeg" class="fade-slide" style="width:100%; height:100%; object-fit:cover; position:absolute;">
+      <img src="https://i.imgur.com/sUFwzFT.jpeg" class="fade-slide" style="width:100%; height:100%; object-fit:cover; position:absolute;">
+    </div>
+
+    <!-- TEXT + CTA -->
+    <div style="position: relative; z-index: 2; color: white; padding: 120px 5% 0; max-width: 500px; text-align: left;">
+      <p style="font-size: 18px; margin-bottom: 30px;">Your SoCal Balcony and Deck Rehab Specialist.</p>
+      <h1 style="font-size: 60px; font-weight: 800; margin: 0 0 10px; text-shadow: 2px 2px 6px black; letter-spacing: 2px;">SB‑721 IS THE LAW.</h1>
+      <p style="font-size: 24px; margin-bottom: 30px; text-shadow: 1px 1px 4px black;">IS YOUR PROPERTY COMPLIANT?</p>
+      <a href="#contact" class="animated-button">Free Consultation</a>
+    </div>
+  </div>
+
+  <!-- STYLES -->
+  <style>
+    body, html {
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden;
+      background: black;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .hero-section, #carousel {
+        position: relative !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        transform: none !important;
+        animation: none !important;
+    }  
+    
+    
+    .fade-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0;
+        z-index: 0;
+
+        /* Kill animations from GoDaddy */
+        animation: none !important;
+        transform: none !important;
+        transition: opacity 2s ease-in-out !important;
+    }
+
+    .fade-slide.active {
+        opacity: 1 !important;
+        z-index: 1;
+    }
+
+
+    .animated-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #e60000, #8b0000);
+      background-size: 200% 200%;
+      color: white;
+      padding: 14px 28px;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+      transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .animated-button:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(230, 0, 0, 0.4);
+    }
+  </style>
+
+  <!-- CAROUSEL SCRIPT -->
+  <script>
+    let slides = document.querySelectorAll('.fade-slide');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 4000);
+  </script>
+
+</div>

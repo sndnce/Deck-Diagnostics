@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    color: #333;
+  }
+  
+  .site-header {
+    background: white;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+    padding: 20px 0 10px;
+    box-shadow: 0 6px 20px rgba(0,)
+
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .hdc-logo {
+    height: 120px;
+  }
+  
+  .header-text h1 {
+    color: #e60000;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
+    
+  }
+  
+  .header-text p {
+    font-size: 20px;
+    color: gray;
+    margin: 0;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .header-triangle {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid red;
+    margin: 0 auto;
+    position: relative;
+    top: 6px;
+  }
+  
+  .site-footer {
+    background: #f0f0f0;
+    padding: 40px 20px 20px;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .footer-triangle {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid white;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .socials {
+    margin-top: 20px;
+  }
+  
+  .socials a img {
+    width: 40px;
+    margin: 0 10px;
+  }
+  
