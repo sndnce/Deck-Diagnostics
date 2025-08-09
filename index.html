@@ -11,7 +11,7 @@
 
   <!-- Your site CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
   <!-- HEADER -->
@@ -69,11 +69,167 @@
       <div class="hero-copy">
         <p class="eyebrow">Your SoCal Balcony and Deck Rehab Specialist.</p>
         <h1>SB-721 IS THE LAW.</h1>
-        <p class="sub">IS YOUR PROPERTY COMPLIANT?</p>
-        <a href="/contact.html" class="animated-button">Free Consultation</a>
+        <p class="sub">Is Your Property Compliant?</p>
+        <a href="/contact.html" class="animated-button">GET A FREE CONSULTATION NOW!</a>
       </div>
+
+      <aside class="hero-social"> 
+        <a href="https://www.instagram.com/deckdiagnostics/" aria-label="Instagram" class="soc"> 
+          <img src="public/insta.png" alt="">
+        </a>
+        <a href="https://www.linkedin.com/company/deck-diagnostics/" aria-label="LinkedIn" class="soc">
+          <img src="public/linkedin.png" alt="">
+        </a>
+      </aside>
     </section>
   </main>
+
+  <section class="about-dd">
+    <div class="container">
+      <h2 class="section-title">ABOUT DECK DIAGNOSTICS</h2>
+  
+      <!-- Row 1 -->
+      <div class="about-row">
+        <figure>
+          <img src="public/Huntington Beach-21.jpg" alt="Apartment undergoing inspection">
+        </figure>
+        <div class="about-text">
+          <h3>About Deck Diagnostics</h3>
+          <p>
+            Deck Diagnostics, or <strong>“Deck Doctor”</strong>, is a division of 
+            <strong>Home Dev Co</strong> dedicated to helping landlords meet the 
+            <strong>SB-721 mandatory inspection deadline of January 1, 2026</strong>. 
+            This law requires inspections to determine whether a structure 
+            <strong>poses an immediate safety threat</strong>.
+          </p>
+          <p>
+            <em>If an issue is found, action must be taken without delay.</em>
+          </p>
+          <div class="about-btn">
+            <a href="sb721.html" class="btn">Learn More About SB-721</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Row 2 -->
+      <div class="about-row reverse">
+        <figure>
+          <img src="public/Huntington Beach-24.jpg">
+        </figure>
+        <div class="about-text">
+          <h3>Who is Home Dev Co?</h3>
+          <p>
+            Also known as <strong>HDC</strong>, we are a mobile maintenance company 
+            based in Orange County, CA. We are <strong>licensed, insured, and have 
+            been serving California property owners for over 35 years</strong>.
+          </p>
+          <p>
+            <strong>HDC and its affiliates have been licensed contractors within 
+            the State of California since 1989.</strong>
+          </p>
+        </div>
+      </div>
+  
+      <!-- Mini Header for Home Dev Co -->
+      <div class="hdc-mini">
+        <img src="public/hdc-icon.png" alt="Home Dev Co Logo" class="hdc-logo">
+        <div>
+          <h4>Learn More About Home Dev Co</h4>
+          <p>
+            Visit our main site for a full list of services, company history, and 
+            resources for property owners.
+          </p>
+          <a href="https://www.hdc-fixit.com" target="_blank" class="btn">Visit HDC Website</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Our Clients Say</h2>
+
+    <div class="testimonial-grid">
+      <figure class="testimonial-card">
+        <img src="public/Huntington Beach-21.jpg" alt="Apartment exterior">
+        <blockquote>
+          “They handled everything. Scheduling was fast and the report made SB-721 simple.”
+        </blockquote>
+        <figcaption>— Property Manager, Huntington Beach</figcaption>
+      </figure>
+
+      <figure class="testimonial-card">
+        <img src="public/Huntington Beach-47.jpg" alt="Joists repair detail">
+        <blockquote>
+          “We are sold on Home DevCo and Deck Diagnostics!”
+        </blockquote>
+        <figcaption>— HOA Board Member, Costa Mesa</figcaption>
+      </figure>
+
+      <figure class="testimonial-card">
+        <img src="public/Huntington Beach-33.jpg" alt="Balcony view">
+        <blockquote>
+          “We are very satisfied with the quality of Deck Diagnostics' work and how smoothly the project went.”
+        </blockquote>
+        <figcaption>— Owner, Newport Beach</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- Content -->
+<section class="container contact-grid">
+  <!-- LEFT: Form -->
+  <div class="card">
+    <p class="lead">Have questions about SB-721 or our services?</p>
+
+    <form id="contactForm" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" class="input" type="text" autocomplete="name" placeholder="Your full name" />
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="req">*</span></label>
+        <input id="email" name="email" class="input" type="email" autocomplete="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" class="textarea" placeholder="Tell us a bit about your project or question…"></textarea>
+      </div>
+
+      <button class="btn" type="submit">Send</button>
+      <div class="smallprint">
+        This site is protected by reCAPTCHA and the Google
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>
+        and
+        <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer">Terms of Service</a>
+        apply.
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<!-- SUBSCRIBE -->
+<section class="subscribe">
+  <div class="container">
+    <div class="subscribe-card">
+      <h3>Subscribe for Updates</h3>
+      <p>Deadlines, checklists, and SB-721 tips — straight to your inbox.</p>
+      <form class="subscribe-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+        <label class="sr-only" for="sub-email">Email</label>
+        <input id="sub-email" type="email" name="email" placeholder="you@example.com" required>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -95,7 +251,7 @@
   </footer>
 
   <!-- JS -->
-  <script src="script.js" defer></script>
   <script src="index.js" defer></script>
+  <!-- <script src="index.js" defer></script> -->
 </body>
 </html>
