@@ -1,0 +1,275 @@
+/* =========================
+   FAQ PAGE — ACCESSIBLE + READABLE
+   ========================= */
+
+/* Theme vars (safe fallbacks) */
+:root{
+    --dd-red:#e60000;
+    --dd-text:#222;
+    --dd-muted:#666;
+    --dd-border:#ddd;
+    --dd-bg:#fff;
+  }
+  
+  /* Page container widths match other pages */
+  .page-faq .section.narrow{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: clamp(16px, 2.5vw, 32px);
+  }
+  
+  /* Titles / lead copy */
+  .title-xl{
+    font-size: clamp(28px, 4.2vw, 40px);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--dd-red);
+    margin: 8px 0 10px;
+  }
+  .lead{
+    font-size: clamp(16px, 2.2vw, 18px);
+    color: var(--dd-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .center{ text-align:center; }
+  
+  /* Accordion wrapper */
+  .faq{
+    display: grid;
+    gap: clamp(14px, 2vw, 18px);
+  }
+  
+  /* Each item gets a card-like divider */
+  .faq-item{
+    background: var(--dd-bg);
+    border: 1px solid var(--dd-border);
+    border-radius: 10px;
+    overflow: clip;
+  }
+  
+  /* Remove native marker so we can style our own chevron */
+  .faq-item > summary::-webkit-details-marker{ display:none; }
+  .faq-item > summary{
+    list-style:none;
+  }
+  
+  /* Question row (summary) — big, bold, tappable */
+  .faq-q{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding: clamp(14px, 2.2vw, 18px) clamp(16px, 2.6vw, 22px);
+    cursor:pointer;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    color:#fff;
+    background: linear-gradient(0deg, var(--dd-red), var(--dd-red));
+    /* large tap target */
+    min-height: 56px;
+    position: relative;
+  }
+  
+  /* Chevron */
+  .faq-q::after{
+    content:"▾";
+    font-size: 22px;
+    line-height:1;
+    color:#fff;
+    transition: transform .2s ease;
+  }
+  
+  /* Open state rotates chevron */
+  .faq-item[open] > .faq-q::after{
+    transform: rotate(180deg);
+  }
+  
+  /* Focus-visible ring for keyboard users */
+  .faq-q:focus-visible{
+    outline: 3px solid #000;
+    outline-offset: 3px;
+  }
+  
+  /* Hover (desktop only) */
+  @media (hover:hover){
+    .faq-q:hover{ filter: brightness(0.95); }
+  }
+  
+  /* Answer body */
+  .faq-a{
+    padding: clamp(14px, 2.4vw, 22px);
+    color: var(--dd-text);
+    font-size: clamp(16px, 2.1vw, 18px);
+    line-height: 1.8;
+    background: #fff;
+  }
+  
+  /* Bullets: bigger spacing + readable line length */
+  .faq-a ul{
+    margin: 10px 0 0 1.2em;
+    padding: 0;
+  }
+  .faq-a li{
+    margin: 10px 0;
+  }
+  
+  /* Divider look to match your current style (thin grey line between items) */
+  .faq-item + .faq-item{
+    border-top: none;
+  }
+  
+  /* Links inside FAQ */
+  .page-faq a{
+    color: var(--dd-red);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+  }
+  .page-faq a:hover{ border-bottom-color: var(--dd-red); }
+  
+  /* Small screens: keep everything comfy */
+  @media (max-width: 640px){
+    .faq-q{
+      border-radius: 10px 10px 0 0;
+    }
+    .faq-a{
+      border-radius: 0 0 10px 10px;
+    }
+  }
+  
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .faq-q::after{ transition: none; }
+  }
+  
+  /* ---- Optional: footer social icons sizing fix (from screenshot) ---- */
+  .site-footer .socials img{
+    max-width: 28px;
+    height: auto;
+    display: inline-block;
+  }
+  
+  /* ---- Optional: offcanvas backdrop visibility fix ---- */
+  .backdrop[hidden]{ display:none !important; }
+  .backdrop.show{ display:block; }
+  
+  /* =========================
+   FAQ PAGE — LAYOUT & MOBILE
+   Targets only the FAQ page to avoid collisions.
+   ========================= */
+
+.page-faq .section.narrow{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(16px, 2.5vw, 32px);
+}
+
+/* Title & lead */
+.page-faq .title-xl{
+  font-size: clamp(28px, 4.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #e60000;
+  margin: 8px 0 10px;
+  text-align: center;
+}
+.page-faq .lead{
+  font-size: clamp(16px, 2.2vw, 18px);
+  color: #666;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Email as button (works if you keep the plain link too) */
+.page-faq .email-btn{
+  display:inline-block;
+  background:#e60000; color:#fff; text-decoration:none;
+  font-weight:700; font-size:16px; letter-spacing:.5px;
+  padding:12px 20px; border-radius:8px;
+  transition: background .2s ease;
+}
+.page-faq .email-btn:hover,
+.page-faq .email-btn:focus{ background:#b80000; }
+.page-faq .email-btn:focus-visible{ outline:3px solid #000; outline-offset:3px; }
+
+/* FAQ grid */
+.page-faq .faq{
+  display: grid;
+  gap: clamp(14px, 2vw, 18px);
+}
+
+/* Details “card” */
+.page-faq .faq-item{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  overflow: clip;
+}
+
+/* Remove default marker; style summary */
+.page-faq .faq-item > summary::-webkit-details-marker{ display:none; }
+.page-faq .faq-q{
+  list-style:none;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding: clamp(14px, 2.2vw, 18px) clamp(16px, 2.6vw, 22px);
+  cursor:pointer;
+  font-weight:800; text-transform:uppercase; letter-spacing:.6px;
+  color:#fff;
+  background: #e60000;
+  min-height:56px; /* big tap target */
+  position:relative;
+}
+
+/* Chevron */
+.page-faq .faq-q::after{
+  content:"▾"; font-size:22px; line-height:1; color:#fff;
+  transition: transform .2s ease;
+}
+.page-faq .faq-item[open] > .faq-q::after{ transform: rotate(180deg); }
+
+/* Focus state */
+.page-faq .faq-q:focus-visible{
+  outline:3px solid #000; outline-offset:3px;
+}
+
+/* Answer body */
+.page-faq .faq-a{
+  padding: clamp(14px, 2.4vw, 22px);
+  color:#222; background:#fff;
+  font-size: clamp(16px, 2.1vw, 18px);
+  line-height:1.8;
+}
+.page-faq .faq-a ul{ margin:10px 0 0 1.2em; padding:0; }
+.page-faq .faq-a li{ margin:10px 0; }
+
+/* Mobile tweaks */
+@media (max-width: 640px){
+  .page-faq .faq-q{ border-radius:10px 10px 0 0; }
+  .page-faq .faq-a{ border-radius:0 0 10px 10px; }
+}
+
+/* Footer/social small sizing on this page */
+.page-faq .socials img{ max-width:28px; height:auto; display:inline-block; }
+
+/* Backdrop visibility helper (pairs with your JS) */
+.backdrop[hidden]{ display:none !important; }
+.backdrop.show{ display:block; }
+/* Header: keep everything on one line until it needs to wrap, then stack nicely */
+@media (max-width: 980px){
+  .site-header .header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap; /* allows logo/title to drop below if needed */
+    padding: 10px 12px;
+  }
+  .hdc-home-link span{ display:none; }             /* hide long text label */
+  .hdc-home-link .hdc-home-icon{ width: 36px; }    /* icon-only on tablet */
+  .hdc-logo{ height: 84px; }                        /* smaller logo */
+  .header-text h1{ font-size: clamp(20px, 4vw, 28px); }
+  .header-text p{ font-size: 12px; }
+}

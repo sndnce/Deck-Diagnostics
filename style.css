@@ -168,3 +168,28 @@ body{
   color:#b80000; text-decoration:underline; text-underline-offset:3px;
 }
 @media (max-width:520px){ .footer-menu{ gap:20px; } }
+
+/* Compact header on small screens */
+@media (max-width: 768px){
+  .site-header .header-inner{
+    padding: 8px 12px;
+    gap: 10px;
+  }
+  .hdc-logo{ height: 64px; }                /* was too tall */
+  .header-text h1{
+    font-size: 22px;                         /* shrink title */
+    line-height: 1.1;
+    letter-spacing: .5px;
+  }
+  .header-text p{ font-size: 12px; }
+
+  /* Right-side link: icon-only on mobile */
+  .hdc-home-link span{ display:none; }
+  .hdc-home-link .hdc-home-icon{ width: 32px; height: 32px; }
+}
+
+/* Very small phones */
+@media (max-width: 420px){
+  .hdc-logo{ height: 56px; }
+  .header-text h1{ font-size: 20px; }
+}
