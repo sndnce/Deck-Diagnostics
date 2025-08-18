@@ -2,95 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ — Deck Diagnostics</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="/public/DeckDiagFavicon (1).png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ | Deck Diagnostics</title>
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="./faq.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="./public/DeckDiagFavicon.png" />
+  <script defer src="./script.js"></script>
 </head>
+
 <body>
-  <!-- HEADER -->
   <header class="site-header">
-    <div class="header-inner">
-      <!-- LEFT: Hamburger -->
-      <button class="nav-toggle" aria-expanded="false" aria-controls="offcanvas" aria-label="Open menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-
-      <!-- CENTER: Logo + Title -->
-      <div class="header-content">
-        <img src="/public/DeckDiagFavicon (1).png" alt="HDC Logo" class="hdc-logo" />
-        <div class="header-text">
-          <h1>DECK DIAGNOSTICS</h1>
-          <a href="https://www.hdc-fixit.com" target="_blank" rel="noopener">
-            <p>by Home DevCo Inc.</p>
-          </a>
-        </div>
+    <div class="header-content">
+      <img src="./public/DeckDiagLogo.png" alt="Deck Diagnostics Logo" class="hdc-logo"/>
+      <div class="header-text">
+        <h1>DECK DIAGNOSTICS</h1>
+        <a href="https://homedevco.com">by Home DevCo Inc.</a>
       </div>
-
-      <!-- RIGHT: HDC Home -->
-      <a href="https://www.hdc-fixit.com/home" target="_blank" rel="noopener" class="hdc-home-link">
-        <img src="/public/hdc-icon.png" alt="HDC Home" class="hdc-home-icon">
-        <span>Return to HDC Official Site</span>
-      </a>
     </div>
+    <nav class="top-nav">
+      <button class="nav-toggle" aria-label="Toggle Navigation Menu">MENU</button>
+      <div class="offcanvas" id="offcanvas" aria-hidden="true">
+        <button class="nav-close" aria-label="Close Menu">✕</button>
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./sb721.html">SB-721</a></li>
+          <li><a href="./faq.html" class="active">FAQ</a></li>
+          <li><a href="./contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <div class="backdrop"></div>
+    </nav>
   </header>
 
-  <!-- OFFCANVAS NAV -->
-  <aside id="offcanvas" class="offcanvas" aria-hidden="true">
-    <header class="offcanvas-head">
-      <strong>MENU</strong>
-      <button class="nav-close" aria-label="Close menu">✕</button>
-    </header>
-    <nav class="offcanvas-nav" aria-label="Site">
-      <a href="/index.html" class="nav-link">HOME</a>
-      <a href="/sb721.html" class="nav-link">SB-721</a>
-      <a href="/faq.html" class="nav-link is-active">FAQ</a>
-      <a href="/contact.html" class="nav-link">CONTACT</a>
-    </nav>
-  </aside>
-  <div class="backdrop" hidden></div>
+  <main class="container">
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>What is SB-721?</summary>
+        <p>SB-721 is a California state law that requires periodic inspections of certain exterior elements in multi-family residential buildings, such as balconies, decks, and walkways.</p>
+      </details>
+      <details>
+        <summary>Who does this law apply to?</summary>
+        <p>It applies to buildings with 3 or more multi-family dwelling units that have exterior elevated elements more than 6 feet above ground level.</p>
+      </details>
+      <details>
+        <summary>How often do inspections need to happen?</summary>
+        <p>The first inspection must be completed by January 1, 2026, and then once every six years thereafter.</p>
+      </details>
+      <details>
+        <summary>What happens if I don’t comply?</summary>
+        <p>Failure to comply with the timeline may result in daily fines of $100–$500 per affected unit.</p>
+      </details>
+      <details>
+        <summary>How long does the inspection take?</summary>
+        <p>Most inspections can be completed within a single site visit. Reports are delivered within a few business days.</p>
+      </details>
+      <details>
+        <summary>How do I schedule an inspection?</summary>
+        <p>You can <a href="./contact.html">contact us</a> directly through the website or call us at <a href="tel:7145029029">(714) 502‑9029</a>.</p>
+      </details>
+    </section>
 
-  <!-- PAGE CONTENT -->
-  <main id="main" class="page page-faq" tabindex="-1">
-    <section class="section narrow">
-      <header class="section-head">
-        <h2 class="title-xl center">FREQUENTLY ASKED QUESTIONS</h2>
-        <p class="lead center">
-          Can’t find an answer? Email us at
-          <a href="mailto:info@deckdiagnostics.com">info@deckdiagnostics.com</a>.
-        </p>
-      </header>
-
-      <!-- FAQ ACCORDION -->
-      <div class="faq">
-        <!-- FAQ items (unchanged) -->
-        <!-- You already provided great semantic structure and copy here, no change needed -->
-        <!-- 1–6 items from your original HTML -->
-        ...
-      </div>
+    <section class="subscribe-section">
+      <h3>Subscribe to Our Mailing List</h3>
+      <p>Stay informed about SB-721 updates and inspection deadlines.</p>
+      <form action="mailto:info@deckdiagnostics.com" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="footer-triangle"></div>
-    <div class="footer-content">
-      <nav class="footer-menu" aria-label="Footer">
-        <a href="/index.html">ABOUT</a>
-        <a href="/sb721.html">SB-721</a>
-        <a href="/faq.html" aria-current="page">FAQ</a>
-        <a href="/contact.html">CONTACT</a>
-      </nav>
-      <p>&copy; 2024 Deck Diagnostics – All rights reserved.<br>Licensed since 1989 LIC #700854</p>
-      <div class="socials">
-        <a href="#"><img src="/public/insta.png" alt="Instagram"></a>
-        <a href="#"><img src="/public/linkedin.png" alt="LinkedIn"></a>
-      </div>
-    </div>
+    <p>&copy; 2025 Deck Diagnostics. All rights reserved.</p>
   </footer>
-
-  <script src="/index.js" defer></script>
 </body>
 </html>
