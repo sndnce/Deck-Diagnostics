@@ -1,21 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const toggle   = document.querySelector('.nav-toggle');
-  const panel    = document.getElementById('offcanvas');
+  // ===== CONTACT FORM HANDLER =====
+  const form = document.getElementById('contactForm');
+  const toast = document.getElementById('toast');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        name: (form.name?.value || '').trim(),
+        email: (form.email?.value || '').trim(),
+        message: (form.message?.value || '').trim(),
+      };
+      const emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
+      if (!emailOK) {
+        alert('Please enter a valid email.');
+        form.email.focus();
+        return;
+      }
+      await new Promise(r => setTimeout(r, 500)); // Fake delay
+      form.reset();
+      if (toast) {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2800);
+      }
+    });
+  }
+
+  // ===== TODAY'S HOURS HIGHLIGHT =====
+  const todayShort = new Date().toLocaleString('en-US', { weekday: 'short' }).toLowerCase();
+  document.querySelectorAll('.hours-card .row').forEach(row => {
+    const label = row.querySelector('strong')?.textContent.trim().toLowerCase();
+    if (label?.startsWith(todayShort)) {
+      row.classList.add('today');
+    }
+  });
+
+  // ===== OFFCANVAS NAVIGATION =====
+  const toggle = document.querySelector('.nav-toggle');
+  const panel = document.getElementById('offcanvas');
   const closeBtn = panel?.querySelector('.nav-close');
   const backdrop = document.querySelector('.backdrop');
-  const links    = panel?.querySelectorAll('.nav-link') || [];
+  const links = panel?.querySelectorAll('.nav-link') || [];
 
-  function openMenu(){
+  function openMenu() {
     panel.classList.add('open');
-    panel.setAttribute('aria-hidden','false');
-    toggle?.setAttribute('aria-expanded','true');
+    panel.setAttribute('aria-hidden', 'false');
+    toggle?.setAttribute('aria-expanded', 'true');
     backdrop.classList.add('show');
     links[0]?.focus();
   }
-  function closeMenu(){
+
+  function closeMenu() {
     panel.classList.remove('open');
-    panel.setAttribute('aria-hidden','true');
-    toggle?.setAttribute('aria-expanded','false');
+    panel.setAttribute('aria-hidden', 'true');
+    toggle?.setAttribute('aria-expanded', 'false');
     backdrop.classList.remove('show');
     toggle?.focus();
   }
@@ -29,13 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape' && panel.classList.contains('open')) closeMenu();
   });
 
-  // “On click, bold persists” — mark clicked link as .current
+  // Make clicked nav item persist as `.current`
   links.forEach(a => {
     a.addEventListener('click', () => {
       links.forEach(l => l.classList.remove('current'));
       a.classList.add('current');
-      // optional: close the menu after clicking
-      closeMenu();
+      closeMenu(); // optional: auto-close after clicking
     });
   });
+
+  // ===== HERO CAROUSEL (FADE EFFECT) =====
+  const hero = document.querySelector('.hero');
+  const slides = Array.from(document.querySelectorAll('#carousel .fade-slide'));
+  if (slides.length) {
+    let i = 0, timer;
+    const DURATION = 4000;
+
+    const show = (idx) => {
+      slides.forEach((el, n) => el.classList.toggle('active', n === idx));
+    };
+    const next = () => {
+      i = (i + 1) % slides.length;
+      show(i);
+    };
+    const start = () => { timer = setInterval(next, DURATION); };
+    const stop = () => { clearInterval(timer); };
+
+    show(0);
+    start();
+    hero?.addEventListener('mouseenter', stop);
+    hero?.addEventListener('mouseleave', start);
+  }
 });
+
